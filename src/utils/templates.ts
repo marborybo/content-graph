@@ -58,6 +58,24 @@ export const TEMPLATES: Template[] = [
     },
   },
   {
+    name: 'Script Coach → Repurpose',
+    description: 'Analyze a talk script for insights, then repurpose to social',
+    build: () => {
+      const src = makeNode('text-source', 0, 60);
+      const sa = makeNode('script-analysis', 300, 60);
+      const li = makeNode('linkedin-post', 600, -60);
+      const tw = makeNode('twitter-thread', 600, 60);
+      const qc = makeNode('quote-card', 600, 180);
+      return {
+        nodes: [src, sa, li, tw, qc],
+        edges: [
+          makeEdge(src.id, sa.id),
+          makeEdge(sa.id, li.id), makeEdge(sa.id, tw.id), makeEdge(sa.id, qc.id),
+        ],
+      };
+    },
+  },
+  {
     name: 'Research → Visual',
     description: 'Extract data points, generate infographic and AI image',
     build: () => {

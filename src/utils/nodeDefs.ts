@@ -29,6 +29,7 @@ export const NODE_DEFS: NodeDef[] = [
   { subtype: 'export', label: 'Export', badge: 'Ex', category: 'output', description: 'Platform-ready package', hasInput: true, hasOutput: true, maxInputs: 8 },
   // Advanced (collapsed in palette)
   { subtype: 'refine', label: 'Refine', badge: 'Rf', category: 'transform', description: 'Directive for what to extract or change', hasInput: true, hasOutput: true },
+  { subtype: 'script-analysis', label: 'Script Analysis', badge: 'Sa', category: 'transform', description: 'Science claims, metaphors, logic gaps', hasInput: true, hasOutput: true },
 ];
 
 export const NODE_DEFS_BY_SUBTYPE = Object.fromEntries(NODE_DEFS.map((d) => [d.subtype, d]));
@@ -64,4 +65,5 @@ export const DEFAULT_MODELS: Record<string, string> = {
   'quote-card': 'claude-haiku-4',
   'image-prompt': 'claude-haiku-4',
   'text-source': 'claude-haiku-4',
+  'script-analysis': 'claude-sonnet-4',
 };
