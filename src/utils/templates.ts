@@ -76,6 +76,24 @@ export const TEMPLATES: Template[] = [
     },
   },
   {
+    name: 'Voice → Script Coach',
+    description: 'Record speech live, analyze, then repurpose to social',
+    build: () => {
+      const vc = makeNode('voice-source', 0, 60);
+      const sa = makeNode('script-analysis', 300, 60);
+      const li = makeNode('linkedin-post', 600, -60);
+      const tw = makeNode('twitter-single', 600, 60);
+      const nl = makeNode('newsletter', 600, 180);
+      return {
+        nodes: [vc, sa, li, tw, nl],
+        edges: [
+          makeEdge(vc.id, sa.id),
+          makeEdge(sa.id, li.id), makeEdge(sa.id, tw.id), makeEdge(sa.id, nl.id),
+        ],
+      };
+    },
+  },
+  {
     name: 'Research → Visual',
     description: 'Extract data points, generate infographic and AI image',
     build: () => {

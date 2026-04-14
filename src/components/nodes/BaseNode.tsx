@@ -8,6 +8,7 @@ import { RefineInline } from './TransformNodes';
 import { ExportInline } from './OutputNodes';
 import { ImagePromptInline } from './ImagePromptNode';
 import { ScriptAnalysisInline } from './ScriptAnalysisNode';
+import { VoiceSourceInline } from './VoiceSourceNode';
 
 const STATUS_COLORS: Record<string, string> = {
   idle: '#C8D4CC', running: '#F0D8A0', complete: '#0DBF5A',
@@ -54,6 +55,7 @@ export default function BaseNode({ id, data, selected }: NodeProps<ContentNode>)
 
       {data.subtype === 'text-source' && <TextSourceInline id={id} />}
       {data.subtype === 'image-source' && <ImageSourceInline id={id} />}
+      {data.subtype === 'voice-source' && <VoiceSourceInline id={id} />}
       {data.subtype === 'refine' && <RefineInline id={id} />}
       {data.subtype === 'script-analysis' && <ScriptAnalysisInline id={id} />}
       {data.subtype === 'image-prompt' && <ImagePromptInline id={id} />}

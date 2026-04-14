@@ -15,6 +15,7 @@ export const NODE_DEFS: NodeDef[] = [
   // Source
   { subtype: 'text-source', label: 'Text', badge: 'Tx', category: 'source', description: 'Raw content, transcript, notes', hasInput: false, hasOutput: true },
   { subtype: 'image-source', label: 'Image', badge: 'Im', category: 'source', description: 'Product photo, diagram', hasInput: false, hasOutput: true },
+  { subtype: 'voice-source', label: 'Voice', badge: 'Vc', category: 'source', description: 'Record speech, auto-transcribe', hasInput: false, hasOutput: true },
   // Generate
   { subtype: 'linkedin-post', label: 'LinkedIn Post', badge: 'Li', category: 'generate', description: '150–300 word hook post', hasInput: true, hasOutput: true },
   { subtype: 'twitter-thread', label: 'Twitter Thread', badge: 'Tw', category: 'generate', description: '5–10 tweet thread', hasInput: true, hasOutput: true },
